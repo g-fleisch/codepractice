@@ -57,20 +57,19 @@ var sortedSquares = function(nums) {
  * @param {number[]} arr
  * @return {void} Do not return anything, modify arr in-place instead.
  */
-
-var shiftArray = function(arr, stindx){
-    for(let i=arr.length-1;i>stindx;i--){
-        arr[i] = arr[i-1];
-    }
-}
-
 var duplicateZeros = function(arr) {
+    let finalarray = [];
+    let offset = 0;
     for(let i=0;i<arr.length;i++){
         num = arr[i];
+        finalarray[i+offset] = arr[i];
         if(num == 0){
-            shiftArray(arr,i);
-            i++;
+            offset++;
+            finalarray[i+offset] = arr[i];
         }
+    }
+    for(let i=0;i<arr.length;i++){
+        arr[i] = finalarray[i];
     }
     return arr;
 };
