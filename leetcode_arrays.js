@@ -104,3 +104,18 @@ var merge = function(nums1, m, nums2, n) {
     }
     return nums1;
 };
+
+/***************** Remove Element
+https://leetcode.com/explore/featured/card/fun-with-arrays/526/deleting-items-from-an-array/3247/
+*/
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+var removeElement = function(nums, val) {
+    var indexToDelete = -1;
+    while ((indexToDelete = nums.indexOf(val)) != -1) {
+        nums.splice(indexToDelete, 1);
+    }
+};
